@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFP Response - Liquid Lighting E-Commerce Platform</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #3182ce;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+            --text-color: #2d3748;
+            --muted-color: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 40px;
+            page-break-after: always;
+        }
+
+        .cover-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .cover-page h2 {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cover-page .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 60px;
+        }
+
+        .cover-logos {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cover-logo {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cover-logo h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .cover-logo p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .cover-meta {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .cover-meta p {
+            margin: 8px 0;
+        }
+
+        /* Document Header */
+        .doc-header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .doc-header h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .section-header h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .subsection {
+            margin: 25px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .subsection h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .subsection h4 {
+            color: var(--text-color);
+            font-size: 1rem;
+            margin: 15px 0 8px 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--light-bg);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .price-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .price-table .total-row {
+            background: var(--light-bg);
+            font-weight: 600;
+        }
+
+        .price-table .subtotal-row {
+            background: #e8f4f8;
+            font-weight: 500;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin: 10px 0 10px 25px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: var(--light-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: #ed8936;
+            background: #fffaf0;
+        }
+
+        .highlight-box.success {
+            border-left-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        /* Partner Cards */
+        .partner-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .partner-card {
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .partner-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .partner-card p {
+            font-size: 0.9rem;
+            color: var(--muted-color);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            font-size: 0.9rem;
+            color: var(--muted-color);
+            margin-bottom: 8px;
+        }
+
+        /* Phase boxes */
+        .phase-box {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .phase-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 20px;
+            font-weight: 600;
+        }
+
+        .phase-content {
+            padding: 20px;
+        }
+
+        /* Footer */
+        .page-footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+            color: var(--muted-color);
+            font-size: 0.9rem;
+        }
+
+        /* Print styles */
+        @media print {
+            .cover-page {
+                min-height: auto;
+                padding: 100px 40px;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+        .tbd {
+            color: #e53e3e;
+            font-style: italic;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: var(--muted-color);
+            font-style: italic;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .feature-item .check {
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .executive-summary h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .cost-summary-box {
+            background: var(--primary-color);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .cost-summary-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .cost-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cost-item {
+            text-align: center;
+        }
+
+        .cost-item .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .cost-item .amount {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .cover-logo-img {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        .section-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1>Proposal for E-Commerce Platform Development</h1>
+        <h2>Liquid Lighting Expansion Project</h2>
+        <p class="subtitle">A Comprehensive Digital Commerce & Customer Experience Solution</p>
+
+        <div class="cover-logos">
+            <div class="cover-logo">
+                <img src="assets/broadbrand_logo.png" alt="Broadbrand" class="cover-logo-img">
+                <p>E-Commerce & Digital Marketing</p>
+            </div>
+            <div class="cover-logo">
+                <img src="assets/cxg_logo.png" alt="CXG" class="cover-logo-img">
+                <p>CRM & Customer Experience</p>
+            </div>
+            <div class="cover-logo">
+                <img src="assets/digitalise_logo.png" alt="Digitalise" class="cover-logo-img">
+                <p>Development & Integration</p>
+            </div>
+        </div>
+
+        <div class="cover-meta">
+            <p><strong>Prepared for:</strong> Liquid Lighting (PTY) Ltd</p>
+            <p><strong>Attention:</strong> Taschy Fourie (Project Owner) & Fiona Reid (Executive Sponsor)</p>
+            <p><strong>Date:</strong> December 2024</p>
+            <p><strong>Valid Until:</strong> 28 February 2025</p>
+            <p><strong>Reference:</strong> BB-LL-ECOMM-2024-001</p>
+        </div>
+    </div>
+
+    <!-- Main Document -->
+    <div class="container">
+        <div class="doc-header">
+            <h1>RFP Response: Liquid Lighting E-Commerce Platform Development</h1>
+            <p style="color: var(--muted-color); margin-top: 10px;">Reference: BB-LL-ECOMM-2024-001 | Submitted:
+                December 2024</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Table of Contents</h2>
+            </div>
+            <ol style="columns: 2; column-gap: 40px;">
+                <li>Executive Summary</li>
+                <li>About Digital Solutions Group</li>
+                <li>Our Delivery Team</li>
+                <li>Understanding Your Requirements</li>
+                <li>Proposed Solution Overview</li>
+                <li>Phase 1: Retail E-Commerce</li>
+                <li>Phase 2: User Portal & Commercial Tools</li>
+                <li>Phase 3: Loyalty & Engagement</li>
+                <li>Technology Stack</li>
+                <li>Integration Architecture</li>
+                <li>Project Timeline</li>
+                <li>Team Structure</li>
+                <li>Commercial Proposal</li>
+                <li>Ongoing Support & Maintenance</li>
+                <li>Terms & Conditions</li>
+                <li>Next Steps</li>
+            </ol>
+        </div>
+
+        <!-- 1. Executive Summary -->
+        <div class="section">
+            <div class="section-header">
+                <h2>1. Executive Summary</h2>
+            </div>
+
+            <div class="executive-summary">
+                <h3>Our Commitment to Your Success</h3>
+                <p>We are pleased to present this proposal for the design, development, and implementation of a
+                    comprehensive e-commerce platform for Liquid Lighting. Our consortium brings together three
+                    specialist companies under one unified delivery framework, providing you with a true turnkey
+                    solution that addresses every aspect of your digital commerce requirements.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Why Choose Our Consortium?</h3>
+                <ul>
+                    <li><strong>Integrated Expertise:</strong> E-commerce, customer experience, and custom development
+                        capabilities under one roof</li>
+                    <li><strong>Proven Platforms:</strong> Shopify Plus for e-commerce excellence, QContact for
+                        omnichannel customer engagement</li>
+                    <li><strong>Local Presence:</strong> South African-based teams with understanding of local market
+                        dynamics and payment ecosystems</li>
+                    <li><strong>Scalable Architecture:</strong> Built to grow with your business from retail launch
+                        through commercial expansion</li>
+                    <li><strong>Single Point of Contact:</strong> Broadbrand as your primary partner, coordinating all
+                        deliverables</li>
+                </ul>
+            </div>
+
+            <div class="cost-summary-box">
+                <h3>Investment Summary</h3>
+                <div class="cost-summary-grid">
+                    <div class="cost-item">
+                        <div class="label">Implementation (Once-off)</div>
+                        <div class="amount">R XXX,XXX</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="label">Monthly Platform Costs</div>
+                        <div class="amount">R XX,XXX</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="label">Monthly Support</div>
+                        <div class="amount">R XX,XXX</div>
+                    </div>
+                </div>
+                <p class="note" style="margin-top: 15px; opacity: 0.8; text-align: center;">*Detailed breakdown provided
+                    in Section 12</p>
+            </div>
+        </div>
+
+        <!-- 2. About Digital Solutions Group -->
+        <div class="section">
+            <div class="section-header">
+                <h2>2. About Digital Solutions Group</h2>
+            </div>
+
+            <div class="highlight-box success">
+                <strong>27 Years of CX Excellence | Pan-African Presence | World-Class Digital Services</strong>
+            </div>
+
+            <img src="assets/dsg_logo.png" alt="Digital Solutions Group" class="section-logo">
+
+            <p><strong>Digital Solutions Group (DSG)</strong> is a leading digital solutions service provider with 27
+                years of experience in customer experience (CX) excellence and a strong pan-African presence. Our
+                mission is <em>"Translating Innovation Into Value Creation"</em> - integrating digital solutions that
+                help businesses optimise customer service, adapt to market changes, and successfully navigate digital
+                transformation.</p>
+
+            <p>DSG operates across multiple specialist divisions, enabling businesses to operate effectively in an
+                always-connected digital landscape. For this project, we bring together three DSG companies under one
+                unified delivery framework:</p>
+
+            <div
+                style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 25px; border-radius: 8px; margin: 20px 0;">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <h4 style="margin-bottom: 8px; font-size: 1.1rem;">Broadbrand</h4>
+                        <p style="font-size: 0.85rem; opacity: 0.9;">Mobile media marketing solutions converting digital
+                            interactions into customer relationships</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 8px; font-size: 1.1rem;">CXG</h4>
+                        <p style="font-size: 0.85rem; opacity: 0.9;">Integrated customer experience solutions for
+                            consumer-focused organisations</p>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 8px; font-size: 1.1rem;">Digitalise</h4>
+                        <p style="font-size: 0.85rem; opacity: 0.9;">Design and development studio creating customised
+                            digital experiences</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">Proud members of
+                    Digital Solutions Group | <a href="https://dsg.co.za" style="color: white;">www.dsg.co.za</a></p>
+            </div>
+
+            <div class="subsection">
+                <h3>The DSG Advantage</h3>
+                <p>As a DSG consortium, we offer Liquid Lighting unique benefits:</p>
+                <ul>
+                    <li><strong>Integrated Ecosystem:</strong> Access to complementary DSG services including payments
+                        (uPay), fulfilment (uFreight), cybersecurity (Digital Resilience), and more</li>
+                    <li><strong>Proven Track Record:</strong> 27 years delivering digital transformation across Africa
+                    </li>
+                    <li><strong>Single Accountability:</strong> One group, one relationship, complete accountability
+                    </li>
+                    <li><strong>Scalable Solutions:</strong> Grow your digital capabilities as your business expands
+                    </li>
+                    <li><strong>Local Expertise:</strong> Deep understanding of South African market dynamics</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. Our Delivery Team -->
+        <div class="section">
+            <div class="section-header">
+                <h2>3. Our Delivery Team</h2>
+            </div>
+
+            <p>For this project, we bring together three specialist DSG companies to deliver a comprehensive solution:
+            </p>
+
+            <div class="partner-cards">
+                <div class="partner-card">
+                    <h4>Broadbrand</h4>
+                    <p><strong>Lead Partner</strong></p>
+                    <p>E-Commerce, Digital Marketing, Creative Design, AI Optimization & Media Buying</p>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px solid var(--border-color);">
+                    <p><strong>Platform:</strong> Shopify</p>
+                </div>
+                <div class="partner-card">
+                    <h4>CXG</h4>
+                    <p><strong>CX Partner</strong></p>
+                    <p>CRM Implementation, WhatsApp Business Integration, Customer Support Operations</p>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px solid var(--border-color);">
+                    <p><strong>Platform:</strong> QContact</p>
+                </div>
+                <div class="partner-card">
+                    <h4>Digitalise</h4>
+                    <p><strong>Development Partner</strong></p>
+                    <p>Custom Development, API Integrations, Dashboard Development, Mobile Apps</p>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px solid var(--border-color);">
+                    <p><strong>Capability:</strong> Full-Stack</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Delivery Model</h3>
+                <p>Broadbrand will serve as your single point of contact and project lead, coordinating all activities
+                    across our consortium partners. This ensures:</p>
+                <ul>
+                    <li>Unified project management and reporting</li>
+                    <li>Seamless communication channels</li>
+                    <li>Integrated delivery timelines</li>
+                    <li>Single consolidated invoicing (optional)</li>
+                    <li>Accountability for end-to-end delivery</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. Understanding Your Requirements -->
+        <div class="section">
+            <div class="section-header">
+                <h2>4. Understanding Your Requirements</h2>
+            </div>
+
+            <p>Based on your RFP, we understand Liquid Lighting requires:</p>
+
+            <div class="subsection">
+                <h3>Business Objectives</h3>
+                <ul>
+                    <li>Expansion into direct-to-consumer retail sales (new revenue stream)</li>
+                    <li>Modernisation of commercial customer engagement</li>
+                    <li>Unified backend systems (CRM, Accounting, Inventory)</li>
+                    <li>Industry resource hub for professionals and homeowners</li>
+                    <li>Sustainable, maintainable platform post-handover</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Functional Requirements Mapped</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Requirement</th>
+                            <th>Solution Provider</th>
+                            <th>Platform/Approach</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product catalogue with images, details, pricing</td>
+                            <td>Broadbrand</td>
+                            <td>Shopify</td>
+                        </tr>
+                        <tr>
+                            <td>Quote builder (internal & external)</td>
+                            <td>Digitalise + Broadbrand</td>
+                            <td>Custom Shopify App + Portal</td>
+                        </tr>
+                        <tr>
+                            <td>WhatsApp interface for RFQs and orders</td>
+                            <td>CXG</td>
+                            <td>QContact WhatsApp Business</td>
+                        </tr>
+                        <tr>
+                            <td>Chatbot with AI capability</td>
+                            <td>CXG + Digitalise</td>
+                            <td>QContact + AI Integration</td>
+                        </tr>
+                        <tr>
+                            <td>Customer portal</td>
+                            <td>Broadbrand + Digitalise</td>
+                            <td>Shopify Customer Accounts + Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Resource pages</td>
+                            <td>Broadbrand</td>
+                            <td>Shopify CMS</td>
+                        </tr>
+                        <tr>
+                            <td>CRM Integration</td>
+                            <td>CXG + Digitalise</td>
+                            <td>QContact + API Layer</td>
+                        </tr>
+                        <tr>
+                            <td>Accounting Integration</td>
+                            <td>Digitalise</td>
+                            <td>Custom API Integration</td>
+                        </tr>
+                        <tr>
+                            <td>Inventory Integration</td>
+                            <td>Digitalise</td>
+                            <td>Custom API Integration</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 5. Proposed Solution Overview -->
+        <div class="section">
+            <div class="section-header">
+                <h2>5. Proposed Solution Overview</h2>
+            </div>
+
+            <div class="highlight-box success">
+                <strong>Solution Philosophy:</strong> We propose a best-of-breed approach combining industry-leading
+                SaaS platforms (Shopify, QContact) with custom development where needed. This provides enterprise-grade
+                reliability with the flexibility to meet your unique requirements.
+            </div>
+
+            <div class="subsection">
+                <h3>Architecture Overview</h3>
+                <div
+                    style="background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center; margin: 20px 0;">
+                    <pre style="font-family: monospace; font-size: 0.85rem; line-height: 1.8;">
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          CUSTOMER TOUCHPOINTS                           │
+├─────────────────┬─────────────────┬─────────────────┬───────────────────┤
+│   Web Store     │  Mobile App     │    WhatsApp     │   Customer Portal │
+│   (Shopify)     │  (Future)       │   (QContact)    │   (Shopify+Custom)│
+└────────┬────────┴────────┬────────┴────────┬────────┴─────────┬─────────┘
+         │                 │                 │                  │
+         └─────────────────┼─────────────────┼──────────────────┘
+                           │                 │
+                    ┌──────▼─────────────────▼──────┐
+                    │      INTEGRATION LAYER        │
+                    │      (Digitalise APIs)        │
+                    └──────┬─────────────────┬──────┘
+                           │                 │
+         ┌─────────────────┼─────────────────┼─────────────────┐
+         │                 │                 │                 │
+    ┌────▼────┐      ┌─────▼─────┐    ┌──────▼──────┐   ┌──────▼──────┐
+    │   CRM   │      │ Accounting│    │  Inventory  │   │  Reporting  │
+    │(QContact)│     │  System   │    │   System    │   │ (Dashboard) │
+    └─────────┘      └───────────┘    └─────────────┘   └─────────────┘
+                    </pre>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Key Solution Components</h3>
+
+                <h4>E-Commerce Platform (Shopify)</h4>
+                <div class="feature-grid">
+                    <div class="feature-item"><span class="check">✓</span> Responsive, mobile-first design</div>
+                    <div class="feature-item"><span class="check">✓</span> Product catalogue management</div>
+                    <div class="feature-item"><span class="check">✓</span> Secure checkout & payments</div>
+                    <div class="feature-item"><span class="check">✓</span> Customer account management</div>
+                    <div class="feature-item"><span class="check">✓</span> Order management</div>
+                    <div class="feature-item"><span class="check">✓</span> Inventory sync</div>
+                    <div class="feature-item"><span class="check">✓</span> SEO optimisation</div>
+                    <div class="feature-item"><span class="check">✓</span> Analytics & reporting</div>
+                </div>
+
+                <h4>Customer Experience Platform (QContact)</h4>
+                <div class="feature-grid">
+                    <div class="feature-item"><span class="check">✓</span> WhatsApp Business integration</div>
+                    <div class="feature-item"><span class="check">✓</span> Omnichannel inbox</div>
+                    <div class="feature-item"><span class="check">✓</span> CRM & customer data</div>
+                    <div class="feature-item"><span class="check">✓</span> Chatbot automation</div>
+                    <div class="feature-item"><span class="check">✓</span> Ticket management</div>
+                    <div class="feature-item"><span class="check">✓</span> Agent workspace</div>
+                    <div class="feature-item"><span class="check">✓</span> Quote request handling</div>
+                    <div class="feature-item"><span class="check">✓</span> Service call logging</div>
+                </div>
+
+                <h4>Custom Development (Digitalise)</h4>
+                <div class="feature-grid">
+                    <div class="feature-item"><span class="check">✓</span> Quote builder application</div>
+                    <div class="feature-item"><span class="check">✓</span> API integration layer</div>
+                    <div class="feature-item"><span class="check">✓</span> Management dashboard</div>
+                    <div class="feature-item"><span class="check">✓</span> Custom reporting</div>
+                    <div class="feature-item"><span class="check">✓</span> Data migration tools</div>
+                    <div class="feature-item"><span class="check">✓</span> Accounting sync</div>
+                    <div class="feature-item"><span class="check">✓</span> Inventory sync</div>
+                    <div class="feature-item"><span class="check">✓</span> Future mobile app</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Phase 1: Retail E-Commerce -->
+        <div class="section">
+            <div class="section-header">
+                <h2>6. Phase 1: Retail E-Commerce Platform</h2>
+            </div>
+
+            <div class="phase-box">
+                <div class="phase-header">PHASE 1 - Quick Win: New Revenue Stream</div>
+                <div class="phase-content">
+                    <p><strong>Objective:</strong> Launch a fully functional B2C e-commerce store enabling direct retail
+                        sales to consumers.</p>
+                    <p><strong>Timeline:</strong> February - April 2026</p>
+                    <p><strong>Go-Live Target:</strong> May 2026</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>5.1 Shopify Store Development</h3>
+                <h4>Delivered by: Broadbrand</h4>
+
+                <p><strong>Store Setup & Configuration</strong></p>
+                <ul>
+                    <li>Shopify plan setup and configuration</li>
+                    <li>Domain configuration and SSL</li>
+                    <li>Store settings, taxes, and shipping zones (South Africa)</li>
+                    <li>Payment gateway integration (PayFast/Peach Payments/Yoco)</li>
+                    <li>Multi-currency support (if required)</li>
+                </ul>
+
+                <p><strong>Custom Theme Design</strong></p>
+                <ul>
+                    <li>Bespoke theme design aligned with Liquid Lighting brand identity</li>
+                    <li>Responsive design (desktop, tablet, mobile)</li>
+                    <li>Homepage with featured products, promotions, and brand story</li>
+                    <li>Category pages with filtering and sorting</li>
+                    <li>Product detail pages with specifications, imagery, and related products</li>
+                    <li>Search functionality with suggestions</li>
+                    <li>Cart and checkout optimisation</li>
+                    <li>Customer account pages</li>
+                </ul>
+
+                <p><strong>Product Catalogue Setup</strong></p>
+                <ul>
+                    <li>Product data structure and taxonomy design</li>
+                    <li>Initial product upload (up to 500 SKUs included)</li>
+                    <li>Product imagery optimisation</li>
+                    <li>Variant management (sizes, finishes, etc.)</li>
+                    <li>Pricing and inventory setup</li>
+                    <li>Collection/category organisation</li>
+                </ul>
+
+                <p><strong>Content Pages</strong></p>
+                <ul>
+                    <li>About Us</li>
+                    <li>Contact Us with form</li>
+                    <li>FAQ page</li>
+                    <li>Shipping & Returns policy</li>
+                    <li>Privacy Policy & Terms of Service</li>
+                    <li>Resource centre structure (for data sheets, guides)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>5.2 Payment Gateway Integration</h3>
+                <h4>Delivered by: Broadbrand + Digitalise</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gateway Option</th>
+                            <th>Transaction Fee</th>
+                            <th>Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PayFast</td>
+                            <td>~3.5% + R2</td>
+                            <td>Cards, EFT, Mobicred, SnapScan</td>
+                        </tr>
+                        <tr>
+                            <td>Peach Payments</td>
+                            <td>~2.9% + R1</td>
+                            <td>Cards, EFT, Mobile wallets</td>
+                        </tr>
+                        <tr>
+                            <td>Yoco</td>
+                            <td>~2.95%</td>
+                            <td>Cards, QR payments</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">*Final gateway selection based on Liquid Lighting preference and existing relationships.
+                    Gateway fees are paid directly to provider.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>5.3 Basic Integrations (Phase 1)</h3>
+                <h4>Delivered by: Digitalise</h4>
+
+                <ul>
+                    <li><strong>Inventory Sync:</strong> Basic integration with your inventory system to sync stock
+                        levels</li>
+                    <li><strong>Order Notifications:</strong> Order data pushed to your systems</li>
+                    <li><strong>Google Analytics 4:</strong> E-commerce tracking setup</li>
+                    <li><strong>Facebook Pixel:</strong> Conversion tracking for advertising</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>5.4 Digital Marketing Setup</h3>
+                <h4>Delivered by: Broadbrand</h4>
+
+                <p><strong>Launch Marketing Package</strong></p>
+                <ul>
+                    <li>SEO foundation (meta tags, structured data, sitemap)</li>
+                    <li>Google Search Console setup</li>
+                    <li>Google Merchant Centre setup</li>
+                    <li>Facebook/Instagram Shop integration</li>
+                    <li>Email marketing platform setup (Klaviyo/Mailchimp)</li>
+                    <li>Welcome email automation</li>
+                    <li>Abandoned cart recovery automation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 7. Phase 2: User Portal & Commercial Tools -->
+        <div class="section">
+            <div class="section-header">
+                <h2>7. Phase 2: User Portal & Commercial Specification Tools</h2>
+            </div>
+
+            <div class="phase-box">
+                <div class="phase-header">PHASE 2 - Commercial Enablement</div>
+                <div class="phase-content">
+                    <p><strong>Objective:</strong> Extend platform capabilities to serve commercial customers
+                        (electricians, contractors, specifiers) with dedicated tools and self-service portal.</p>
+                    <p><strong>Timeline:</strong> Post Phase 1 Go-Live (suggested Q3 2026)</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>6.1 Commercial Customer Portal</h3>
+                <h4>Delivered by: Broadbrand + Digitalise</h4>
+
+                <p><strong>Customer Account Enhancement</strong></p>
+                <ul>
+                    <li>Trade account application workflow</li>
+                    <li>Tiered pricing display (based on customer group)</li>
+                    <li>Quote history and management</li>
+                    <li>Order history with re-order functionality</li>
+                    <li>Returns/RMA request submission</li>
+                    <li>Service call logging and tracking</li>
+                    <li>Account statement viewing</li>
+                    <li>Saved projects/specifications</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>6.2 Quote Builder Application</h3>
+                <h4>Delivered by: Digitalise</h4>
+
+                <p><strong>External Quote Builder (Customer-Facing)</strong></p>
+                <ul>
+                    <li>Interactive product selection interface</li>
+                    <li>Room/project-based specification tool</li>
+                    <li>Lighting calculation assistance</li>
+                    <li>Visual product configuration</li>
+                    <li>Quote summary with PDF export</li>
+                    <li>Save and share quotes</li>
+                    <li>Convert quote to order</li>
+                </ul>
+
+                <p><strong>Internal Quote Builder (Staff-Facing)</strong></p>
+                <ul>
+                    <li>Full product catalogue access</li>
+                    <li>Customer lookup and association</li>
+                    <li>Custom pricing and discounting</li>
+                    <li>Quote versioning</li>
+                    <li>Approval workflows</li>
+                    <li>Quote-to-order conversion</li>
+                    <li>Integration with CRM (QContact)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>6.3 Field Sales Mobile App (React Native)</h3>
+                <h4>Delivered by: Digitalise</h4>
+
+                <div class="highlight-box success">
+                    <strong>Purpose:</strong> A dedicated mobile application for sales representatives to create
+                    professional quotes on-site at customer premises, trade shows, and project sites - even without
+                    internet connectivity.
+                </div>
+
+                <p><strong>Core Features</strong></p>
+                <ul>
+                    <li><strong>Cross-Platform:</strong> Single codebase for iOS and Android using React Native</li>
+                    <li><strong>Offline-First Architecture:</strong> Full functionality without internet connection,
+                        automatic sync when back online</li>
+                    <li><strong>Tablet & Phone Optimised:</strong> Responsive interface designed for both form factors
+                    </li>
+                </ul>
+
+                <p><strong>Product Catalogue</strong></p>
+                <ul>
+                    <li>Full product browsing with images, specifications, and pricing</li>
+                    <li>Advanced search and filtering by category, type, finish, wattage, etc.</li>
+                    <li>Barcode/QR scanning to quickly add products</li>
+                    <li>Product favourites and recently used items</li>
+                    <li>Cached catalogue for offline access with smart sync</li>
+                    <li>Real-time stock availability (when online)</li>
+                </ul>
+
+                <p><strong>Quote Creation</strong></p>
+                <ul>
+                    <li>Intuitive quote builder with drag-and-drop line items</li>
+                    <li>Room/area-based project organisation</li>
+                    <li>Quick quantity adjustments and variant selection</li>
+                    <li>Tiered pricing based on customer type (retail/trade)</li>
+                    <li>Flexible discounting (line item, overall, trade pricing)</li>
+                    <li>Notes and annotations per line item</li>
+                    <li>Quote duplication and templates for common configurations</li>
+                </ul>
+
+                <p><strong>Customer Management</strong></p>
+                <ul>
+                    <li>Customer lookup from CRM database</li>
+                    <li>Create new customer/prospect on the fly</li>
+                    <li>Customer visit history and previous quotes</li>
+                    <li>Contact details with click-to-call/email</li>
+                    <li>GPS check-in for site visits (optional)</li>
+                </ul>
+
+                <p><strong>Quote Delivery</strong></p>
+                <ul>
+                    <li>Professional PDF quote generation on-device</li>
+                    <li>Email quote directly to customer from app</li>
+                    <li>WhatsApp share integration</li>
+                    <li>Digital signature capture for quote acceptance</li>
+                    <li>Convert accepted quote to order</li>
+                </ul>
+
+                <p><strong>Sales Tools</strong></p>
+                <ul>
+                    <li>Product comparison tool</li>
+                    <li>Lighting calculation helper (lumens, coverage area)</li>
+                    <li>Photo capture and attachment to quotes (site photos)</li>
+                    <li>Technical data sheets and brochures (offline available)</li>
+                    <li>Installation guides and specifications</li>
+                </ul>
+
+                <p><strong>Sync & Integration</strong></p>
+                <ul>
+                    <li>Background sync with central systems</li>
+                    <li>Conflict resolution for offline edits</li>
+                    <li>Push notifications for quote approvals/updates</li>
+                    <li>Integration with Shopify, QContact CRM, and backend systems</li>
+                    <li>Activity logging for sales management reporting</li>
+                </ul>
+
+                <p><strong>Security</strong></p>
+                <ul>
+                    <li>Biometric authentication (Face ID / Fingerprint)</li>
+                    <li>PIN/password protection</li>
+                    <li>Remote wipe capability</li>
+                    <li>Role-based access control</li>
+                    <li>Encrypted local data storage</li>
+                </ul>
+
+                <p><strong>Admin & Reporting</strong></p>
+                <ul>
+                    <li>Sales activity dashboard (quotes created, conversion rates)</li>
+                    <li>Rep performance tracking</li>
+                    <li>Quote pipeline visibility</li>
+                    <li>Export reports to management dashboard</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>6.5 WhatsApp Commerce Integration</h3>
+                <h4>Delivered by: CXG</h4>
+
+                <p><strong>QContact WhatsApp Business API</strong></p>
+                <ul>
+                    <li>Official WhatsApp Business API setup</li>
+                    <li>Automated responses for common queries</li>
+                    <li>Product catalogue browsing via WhatsApp</li>
+                    <li>Quote request submission</li>
+                    <li>Order status enquiries</li>
+                    <li>Agent handover for complex queries</li>
+                    <li>Conversation history in CRM</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>6.6 CRM Implementation</h3>
+                <h4>Delivered by: CXG</h4>
+
+                <p><strong>QContact CRM Setup</strong></p>
+                <ul>
+                    <li>Customer database structure</li>
+                    <li>Lead management workflows</li>
+                    <li>Contact and company management</li>
+                    <li>Interaction history tracking</li>
+                    <li>Task and follow-up management</li>
+                    <li>Custom fields for lighting industry</li>
+                    <li>Reporting and dashboards</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>6.7 Backend Integrations</h3>
+                <h4>Delivered by: Digitalise</h4>
+
+                <p><strong>Integration Development</strong></p>
+                <ul>
+                    <li><strong>Accounting System:</strong> Bi-directional sync for orders, invoices, payments, credit
+                        notes</li>
+                    <li><strong>Inventory System:</strong> Real-time stock levels, reservations, multi-location support
+                    </li>
+                    <li><strong>CRM Integration:</strong> Customer data sync between Shopify and QContact</li>
+                    <li><strong>Quote System:</strong> Quote data flow to/from all systems</li>
+                </ul>
+
+                <div class="highlight-box warning">
+                    <strong>Note:</strong> Integration scope and effort dependent on your existing accounting and
+                    inventory systems. A technical discovery session will be required to finalise integration
+                    specifications.
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Phase 3: Loyalty & Engagement -->
+        <div class="section">
+            <div class="section-header">
+                <h2>8. Phase 3: Loyalty Program & Engagement Features</h2>
+            </div>
+
+            <div class="phase-box">
+                <div class="phase-header">PHASE 3 - Customer Retention & Growth (Post Go-Live)</div>
+                <div class="phase-content">
+                    <p><strong>Objective:</strong> Implement loyalty program and advanced engagement features to drive
+                        repeat business and customer advocacy.</p>
+                    <p><strong>Timeline:</strong> Post Phase 2 (suggested Q4 2026 / Q1 2027)</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>7.1 Loyalty Program</h3>
+                <h4>Delivered by: Broadbrand + Digitalise</h4>
+
+                <ul>
+                    <li>Points-based rewards system</li>
+                    <li>Tiered membership levels (Bronze, Silver, Gold, Platinum)</li>
+                    <li>Points earning rules (purchases, referrals, reviews)</li>
+                    <li>Rewards redemption (discounts, free products, exclusive access)</li>
+                    <li>Trade customer incentives</li>
+                    <li>Birthday/anniversary rewards</li>
+                    <li>Program dashboard for customers</li>
+                    <li>Admin management interface</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>7.2 Advanced AI Chatbot</h3>
+                <h4>Delivered by: CXG + Digitalise</h4>
+
+                <ul>
+                    <li>Natural language product search</li>
+                    <li>Lighting recommendation engine</li>
+                    <li>Technical specification assistance</li>
+                    <li>Order and delivery enquiries</li>
+                    <li>Integration with knowledge base</li>
+                    <li>Seamless human handover</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>7.3 Community & Education Hub</h3>
+                <h4>Delivered by: Broadbrand</h4>
+
+                <ul>
+                    <li>Blog/article platform</li>
+                    <li>Video content hosting</li>
+                    <li>Webinar/event registration</li>
+                    <li>Product training modules</li>
+                    <li>Certification tracking (for trade users)</li>
+                    <li>Community forum (optional)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 9. Technology Stack -->
+        <div class="section">
+            <div class="section-header">
+                <h2>9. Technology Stack</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                        <th>Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>E-Commerce Platform</td>
+                        <td>Shopify / Shopify Plus</td>
+                        <td>Industry-leading SaaS platform, scalable, reliable, extensive app ecosystem</td>
+                    </tr>
+                    <tr>
+                        <td>CRM/CX Platform</td>
+                        <td>QContact</td>
+                        <td>Omnichannel capability, WhatsApp native, SA-based support</td>
+                    </tr>
+                    <tr>
+                        <td>Integration Layer</td>
+                        <td>Node.js / Python APIs</td>
+                        <td>Flexible, performant, well-supported</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Web Applications</td>
+                        <td>React / Next.js</td>
+                        <td>Modern, fast, excellent UX</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile App</td>
+                        <td>React Native</td>
+                        <td>Cross-platform iOS/Android, shared codebase, offline-first capability</td>
+                    </tr>
+                    <tr>
+                        <td>Database</td>
+                        <td>PostgreSQL / MongoDB</td>
+                        <td>Robust, scalable, cost-effective</td>
+                    </tr>
+                    <tr>
+                        <td>Hosting (Custom)</td>
+                        <td>AWS / Google Cloud</td>
+                        <td>Enterprise-grade, South African regions available</td>
+                    </tr>
+                    <tr>
+                        <td>Email Marketing</td>
+                        <td>Klaviyo</td>
+                        <td>Best-in-class Shopify integration, advanced automation</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics</td>
+                        <td>Google Analytics 4 + Custom Dashboard</td>
+                        <td>Comprehensive tracking, business intelligence</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 10. Integration Architecture -->
+        <div class="section">
+            <div class="section-header">
+                <h2>10. Integration Architecture</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>10.1 Integration Approach</h3>
+                <p>We will develop a central integration layer (middleware) that connects all systems, providing:</p>
+                <ul>
+                    <li>Single source of truth for data mapping</li>
+                    <li>Error handling and retry logic</li>
+                    <li>Logging and audit trails</li>
+                    <li>Real-time and scheduled sync options</li>
+                    <li>Scalable architecture for future integrations</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>10.2 Data Flows</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Products & Pricing</td>
+                            <td>Inventory System</td>
+                            <td>Shopify</td>
+                            <td>Real-time / Scheduled</td>
+                        </tr>
+                        <tr>
+                            <td>Stock Levels</td>
+                            <td>Inventory System</td>
+                            <td>Shopify</td>
+                            <td>Real-time</td>
+                        </tr>
+                        <tr>
+                            <td>Orders</td>
+                            <td>Shopify</td>
+                            <td>Accounting + Inventory</td>
+                            <td>Real-time</td>
+                        </tr>
+                        <tr>
+                            <td>Customers</td>
+                            <td>Shopify / QContact</td>
+                            <td>CRM / Accounting</td>
+                            <td>Real-time</td>
+                        </tr>
+                        <tr>
+                            <td>Quotes</td>
+                            <td>Quote Builder</td>
+                            <td>CRM + Shopify</td>
+                            <td>Real-time</td>
+                        </tr>
+                        <tr>
+                            <td>Interactions</td>
+                            <td>QContact</td>
+                            <td>CRM Dashboard</td>
+                            <td>Real-time</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Discovery Required:</strong> Detailed integration specifications will be developed during a
+                technical discovery phase. This includes API documentation review, authentication methods, data mapping,
+                and testing environments for your accounting and inventory systems.
+            </div>
+        </div>
+
+        <!-- 11. Project Timeline -->
+        <div class="section">
+            <div class="section-header">
+                <h2>11. Project Timeline</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>11.1 Phase 1 - Retail E-Commerce</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Project Kickoff & Discovery</h4>
+                        <div class="date">February 2026 - Week 1-2</div>
+                        <p>Stakeholder workshops, requirements validation, technical discovery, design brief</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Design & UX</h4>
+                        <div class="date">February 2026 - Week 2-4</div>
+                        <p>Wireframes, visual design, design review and approval</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Development</h4>
+                        <div class="date">March 2026 - Week 1-4</div>
+                        <p>Theme development, store configuration, product upload, integrations</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Testing & QA</h4>
+                        <div class="date">April 2026 - Week 1-2</div>
+                        <p>Functional testing, UAT, payment testing, performance testing</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Soft Launch</h4>
+                        <div class="date">May 2026 - Week 1</div>
+                        <p>Limited release, monitoring, bug fixes</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Go-Live</h4>
+                        <div class="date">May/June 2026</div>
+                        <p>Full public launch, marketing activation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>11.2 Phase 2 & 3 Timeline</h3>
+                <p>Detailed timelines for Phase 2 and 3 to be developed post Phase 1 go-live, based on learnings and
+                    priorities. Indicative schedule:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Indicative Start</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Phase 2: Commercial Portal & Tools</td>
+                            <td>Q3 2026</td>
+                            <td>3-4 months</td>
+                        </tr>
+                        <tr>
+                            <td>Phase 3: Loyalty & Engagement</td>
+                            <td>Q4 2026 / Q1 2027</td>
+                            <td>2-3 months</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 12. Team Structure -->
+        <div class="section">
+            <div class="section-header">
+                <h2>12. Team Structure</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>Project Governance</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Organisation</th>
+                            <th>Responsibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Project Lead / Account Manager</td>
+                            <td>Broadbrand</td>
+                            <td>Overall delivery, client liaison, coordination</td>
+                        </tr>
+                        <tr>
+                            <td>E-Commerce Lead</td>
+                            <td>Broadbrand</td>
+                            <td>Shopify implementation, store management</td>
+                        </tr>
+                        <tr>
+                            <td>UX/UI Designer</td>
+                            <td>Broadbrand</td>
+                            <td>Design, user experience</td>
+                        </tr>
+                        <tr>
+                            <td>Digital Marketing Specialist</td>
+                            <td>Broadbrand</td>
+                            <td>SEO, advertising, email marketing</td>
+                        </tr>
+                        <tr>
+                            <td>CX Implementation Lead</td>
+                            <td>CXG</td>
+                            <td>QContact setup, CRM, WhatsApp</td>
+                        </tr>
+                        <tr>
+                            <td>Technical Lead</td>
+                            <td>Digitalise</td>
+                            <td>Integrations, custom development</td>
+                        </tr>
+                        <tr>
+                            <td>Full-Stack Developer(s)</td>
+                            <td>Digitalise</td>
+                            <td>Development, API, dashboard</td>
+                        </tr>
+                        <tr>
+                            <td>QA Engineer</td>
+                            <td>Digitalise</td>
+                            <td>Testing, quality assurance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3>Communication & Reporting</h3>
+                <ul>
+                    <li><strong>Weekly Status Meetings:</strong> Progress updates, issue resolution, planning</li>
+                    <li><strong>Bi-Weekly Steering Committee:</strong> Executive updates, milestone reviews, decisions
+                    </li>
+                    <li><strong>Project Management Tool:</strong> Shared workspace for tasks, documents, communication
+                    </li>
+                    <li><strong>Dedicated Slack/Teams Channel:</strong> Real-time communication</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 13. Commercial Proposal -->
+        <div class="section">
+            <div class="section-header">
+                <h2>13. Commercial Proposal</h2>
+            </div>
+
+            <div class="highlight-box warning">
+                <strong>Important:</strong> All prices are quoted in South African Rand (ZAR) and exclude VAT unless
+                otherwise stated.
+            </div>
+
+            <!-- BROADBRAND -->
+            <div class="subsection">
+                <h3>13.1 Broadbrand - E-Commerce & Digital Marketing</h3>
+
+                <h4>Phase 1: Implementation (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shopify Store Setup</td>
+                            <td>Account setup, configuration, domain, SSL, settings</td>
+                            <td class="text-right">R 15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Theme Design</td>
+                            <td>Bespoke responsive theme design, all page templates</td>
+                            <td class="text-right">R 85,000</td>
+                        </tr>
+                        <tr>
+                            <td>Theme Development</td>
+                            <td>Shopify Liquid theme build, customisations</td>
+                            <td class="text-right">R 65,000</td>
+                        </tr>
+                        <tr>
+                            <td>Product Catalogue Setup</td>
+                            <td>Up to 500 SKUs, data structure, upload, optimisation</td>
+                            <td class="text-right">R 25,000</td>
+                        </tr>
+                        <tr>
+                            <td>Content Pages</td>
+                            <td>About, Contact, FAQ, Policies, Resource centre structure</td>
+                            <td class="text-right">R 12,000</td>
+                        </tr>
+                        <tr>
+                            <td>Payment Gateway Integration</td>
+                            <td>PayFast/Peach/Yoco setup and testing</td>
+                            <td class="text-right">R 8,000</td>
+                        </tr>
+                        <tr>
+                            <td>SEO Foundation</td>
+                            <td>Technical SEO, meta tags, structured data, sitemap</td>
+                            <td class="text-right">R 15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics Setup</td>
+                            <td>GA4, GSC, Facebook Pixel, conversion tracking</td>
+                            <td class="text-right">R 8,000</td>
+                        </tr>
+                        <tr>
+                            <td>Email Marketing Setup</td>
+                            <td>Klaviyo setup, templates, welcome & cart automations</td>
+                            <td class="text-right">R 18,000</td>
+                        </tr>
+                        <tr>
+                            <td>Social Commerce Setup</td>
+                            <td>Facebook Shop, Instagram Shopping integration</td>
+                            <td class="text-right">R 8,000</td>
+                        </tr>
+                        <tr>
+                            <td>Training & Documentation</td>
+                            <td>Admin training, user guides, handover</td>
+                            <td class="text-right">R 12,000</td>
+                        </tr>
+                        <tr>
+                            <td>Project Management</td>
+                            <td>Coordination, meetings, reporting (Phase 1)</td>
+                            <td class="text-right">R 25,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>Phase 1 Subtotal (Broadbrand)</strong></td>
+                            <td class="text-right"><strong>R 296,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Phase 2: Commercial Portal Enhancement (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Customer Portal Design</td>
+                            <td>UX/UI for enhanced account area, trade features</td>
+                            <td class="text-right">R 35,000</td>
+                        </tr>
+                        <tr>
+                            <td>Portal Development</td>
+                            <td>Shopify customer account extensions</td>
+                            <td class="text-right">R 45,000</td>
+                        </tr>
+                        <tr>
+                            <td>B2B Features</td>
+                            <td>Trade pricing, quick order, account management</td>
+                            <td class="text-right">R 30,000</td>
+                        </tr>
+                        <tr>
+                            <td>Resource Centre</td>
+                            <td>Data sheets, downloads, documentation hub</td>
+                            <td class="text-right">R 18,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>Phase 2 Subtotal (Broadbrand)</strong></td>
+                            <td class="text-right"><strong>R 128,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Phase 3: Loyalty & Engagement (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Loyalty Program Design</td>
+                            <td>Program structure, rules, UX design</td>
+                            <td class="text-right">R 25,000</td>
+                        </tr>
+                        <tr>
+                            <td>Loyalty Implementation</td>
+                            <td>Platform setup, integration, customer dashboard</td>
+                            <td class="text-right">R 40,000</td>
+                        </tr>
+                        <tr>
+                            <td>Community Hub</td>
+                            <td>Blog, content platform, education centre</td>
+                            <td class="text-right">R 28,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>Phase 3 Subtotal (Broadbrand)</strong></td>
+                            <td class="text-right"><strong>R 93,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Monthly Costs (Broadbrand Managed)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Monthly (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shopify Plan</td>
+                            <td>Shopify Basic / Shopify / Advanced (TBC)</td>
+                            <td class="text-right">R 700 - R 7,500*</td>
+                        </tr>
+                        <tr>
+                            <td>Klaviyo</td>
+                            <td>Email marketing (based on list size)</td>
+                            <td class="text-right">R 0 - R 2,500*</td>
+                        </tr>
+                        <tr>
+                            <td>Apps & Tools</td>
+                            <td>Essential Shopify apps (estimated)</td>
+                            <td class="text-right">R 1,500 - R 3,000*</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">*Platform costs paid directly or passed through at cost. Final costs depend on selected
+                    plans and usage.</p>
+
+                <h4>Digital Agency Retainer (Monthly)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th class="text-right">Monthly (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Digital Agency Retainer</td>
+                            <td>Comprehensive digital marketing services including SEO, paid media management, email
+                                marketing, content strategy, and creative</td>
+                            <td class="text-right"><strong>R 70,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Retainer Includes:</strong></p>
+                <ul>
+                    <li><strong>SEO:</strong> Ongoing optimisation, content strategy, technical SEO, link building</li>
+                    <li><strong>Paid Media:</strong> Google Ads & Meta Ads campaign management (media spend additional)
+                    </li>
+                    <li><strong>Email Marketing:</strong> Campaign strategy, execution, automation flows, list
+                        management</li>
+                    <li><strong>Content & Creative:</strong> Ad creative, social content, promotional materials</li>
+                    <li><strong>Reporting:</strong> Monthly performance reports and strategy sessions</li>
+                    <li><strong>Platform Management:</strong> Ongoing Shopify optimisation and updates</li>
+                </ul>
+                <p class="note">Media/advertising spend is additional and billed separately based on agreed budget.</p>
+            </div>
+
+            <!-- CXG -->
+            <div class="subsection">
+                <h3>13.2 CXG - CRM & Customer Experience</h3>
+
+                <div class="highlight-box warning">
+                    <strong>Commercial Details Pending</strong><br>
+                    CXG commercial proposal to be provided separately. Please contact CXG directly for detailed pricing
+                    on:
+                    <ul style="margin-top: 10px;">
+                        <li>QContact platform licensing</li>
+                        <li>WhatsApp Business API setup and messaging costs</li>
+                        <li>CRM implementation services</li>
+                        <li>Chatbot development and AI integration</li>
+                        <li>Customer support operations (if required)</li>
+                        <li>Ongoing support and maintenance</li>
+                    </ul>
+                </div>
+
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>QContact Implementation</td>
+                            <td>Platform setup, configuration, customisation</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>WhatsApp Business Setup</td>
+                            <td>API integration, templates, workflows</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>CRM Configuration</td>
+                            <td>Customer data, workflows, automation</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>Chatbot Development</td>
+                            <td>Automated responses, AI integration</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>Training</td>
+                            <td>User training, documentation</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>CXG Implementation Subtotal</strong></td>
+                            <td class="text-right tbd"><strong>TBD</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Monthly Costs (CXG)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Monthly (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>QContact Licensing</td>
+                            <td>Per seat / usage based</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>WhatsApp Messaging</td>
+                            <td>Message costs (conversation-based)</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>Support & Maintenance</td>
+                            <td>Ongoing support retainer</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- DIGITALISE -->
+            <div class="subsection">
+                <h3>13.3 Digitalise - Development & Integration</h3>
+
+                <h4>Phase 1: Basic Integrations (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Technical Discovery</td>
+                            <td>System review, API documentation, integration design</td>
+                            <td class="text-right">R 25,000</td>
+                        </tr>
+                        <tr>
+                            <td>Integration Layer Setup</td>
+                            <td>Middleware architecture, authentication, logging</td>
+                            <td class="text-right">R 35,000</td>
+                        </tr>
+                        <tr>
+                            <td>Inventory Sync</td>
+                            <td>Stock level sync with Shopify</td>
+                            <td class="text-right">R 40,000</td>
+                        </tr>
+                        <tr>
+                            <td>Order Export</td>
+                            <td>Order data to accounting/inventory systems</td>
+                            <td class="text-right">R 35,000</td>
+                        </tr>
+                        <tr>
+                            <td>Testing & QA</td>
+                            <td>Integration testing, error handling</td>
+                            <td class="text-right">R 20,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>Phase 1 Subtotal (Digitalise)</strong></td>
+                            <td class="text-right"><strong>R 155,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Phase 2: Advanced Integrations & Custom Development (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quote Builder - External</td>
+                            <td>Customer-facing quote tool (design + development)</td>
+                            <td class="text-right">R 120,000</td>
+                        </tr>
+                        <tr>
+                            <td>Quote Builder - Internal</td>
+                            <td>Staff quote tool with approvals</td>
+                            <td class="text-right">R 95,000</td>
+                        </tr>
+                        <tr>
+                            <td>Field Sales Mobile App</td>
+                            <td>React Native app (iOS & Android), offline-first, quote creation, customer management,
+                                PDF generation, sync</td>
+                            <td class="text-right">R 285,000</td>
+                        </tr>
+                        <tr>
+                            <td>App Store Deployment</td>
+                            <td>Apple App Store & Google Play submission, certificates, listing</td>
+                            <td class="text-right">R 15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Full Accounting Integration</td>
+                            <td>Bi-directional sync (invoices, payments, credit notes)</td>
+                            <td class="text-right">R 75,000</td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Inventory Integration</td>
+                            <td>Multi-location, reservations, real-time sync</td>
+                            <td class="text-right">R 55,000</td>
+                        </tr>
+                        <tr>
+                            <td>CRM Integration</td>
+                            <td>Shopify <> QContact data sync</td>
+                            <td class="text-right">R 45,000</td>
+                        </tr>
+                        <tr>
+                            <td>Management Dashboard</td>
+                            <td>Custom reporting dashboard, KPIs, analytics</td>
+                            <td class="text-right">R 85,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>Phase 2 Subtotal (Digitalise)</strong></td>
+                            <td class="text-right"><strong>R 775,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Phase 3: AI & Advanced Features (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Amount (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Chatbot Integration</td>
+                            <td>Advanced AI capabilities, knowledge base integration</td>
+                            <td class="text-right">R 85,000</td>
+                        </tr>
+                        <tr>
+                            <td>Loyalty System Integration</td>
+                            <td>Custom loyalty backend, multi-system sync</td>
+                            <td class="text-right">R 55,000</td>
+                        </tr>
+                        <tr class="subtotal-row">
+                            <td colspan="2"><strong>Phase 3 Subtotal (Digitalise)</strong></td>
+                            <td class="text-right"><strong>R 140,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Monthly Costs (Digitalise)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th class="text-right">Monthly (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cloud Hosting</td>
+                            <td>Integration layer, custom apps, dashboard</td>
+                            <td class="text-right">R 3,500 - R 8,000*</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile App Support</td>
+                            <td>React Native app maintenance, OS updates, bug fixes</td>
+                            <td class="text-right">R 8,000 - R 12,000</td>
+                        </tr>
+                        <tr>
+                            <td>App Store Fees</td>
+                            <td>Apple Developer Program (R2,000/yr) + Google Play (once-off)</td>
+                            <td class="text-right">~R 200</td>
+                        </tr>
+                        <tr>
+                            <td>Support & Maintenance</td>
+                            <td>Bug fixes, minor enhancements, monitoring (web systems)</td>
+                            <td class="text-right">R 12,000 - R 18,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">*Hosting costs depend on usage and scale. Mobile app support ensures compatibility with
+                    iOS/Android OS updates.</p>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="subsection">
+                <h3>13.4 Investment Summary</h3>
+
+                <h4>Implementation Costs (Once-Off)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Phase 1</th>
+                            <th>Phase 2</th>
+                            <th>Phase 3</th>
+                            <th class="text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Broadbrand</td>
+                            <td>R 296,000</td>
+                            <td>R 128,000</td>
+                            <td>R 93,000</td>
+                            <td class="text-right">R 517,000</td>
+                        </tr>
+                        <tr>
+                            <td>CXG</td>
+                            <td class="tbd">TBD</td>
+                            <td class="tbd">TBD</td>
+                            <td class="tbd">TBD</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>Digitalise</td>
+                            <td>R 155,000</td>
+                            <td>R 775,000</td>
+                            <td>R 140,000</td>
+                            <td class="text-right">R 1,070,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total (excl. CXG)</strong></td>
+                            <td><strong>R 451,000</strong></td>
+                            <td><strong>R 903,000</strong></td>
+                            <td><strong>R 233,000</strong></td>
+                            <td class="text-right"><strong>R 1,587,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Estimated Monthly Costs (Post Go-Live)</h4>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Provider</th>
+                            <th class="text-right">Monthly Range (ZAR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Platform Costs (Shopify, Klaviyo, Apps)</td>
+                            <td>Broadbrand / Direct</td>
+                            <td class="text-right">R 2,200 - R 13,000</td>
+                        </tr>
+                        <tr>
+                            <td>Digital Agency Retainer</td>
+                            <td>Broadbrand</td>
+                            <td class="text-right">R 70,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Hosting (Custom systems)</td>
+                            <td>Digitalise</td>
+                            <td class="text-right">R 3,500 - R 8,000</td>
+                        </tr>
+                        <tr>
+                            <td>QContact & WhatsApp</td>
+                            <td>CXG</td>
+                            <td class="text-right tbd">TBD</td>
+                        </tr>
+                        <tr>
+                            <td>Support & Maintenance (Web)</td>
+                            <td>Digitalise</td>
+                            <td class="text-right">R 12,000 - R 18,000</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile App Support</td>
+                            <td>Digitalise</td>
+                            <td class="text-right">R 8,000 - R 12,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>Estimated Monthly Total (excl. CXG)</strong></td>
+                            <td class="text-right"><strong>R 96,000 - R 121,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">*Payment gateway transaction fees (2.5-3.5% per transaction) are additional and paid
+                    directly to the gateway provider.</p>
+            </div>
+
+            <!-- PAYMENT TERMS -->
+            <div class="subsection">
+                <h3>13.5 Payment Terms</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Milestone</th>
+                            <th>Percentage</th>
+                            <th>Trigger</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Deposit</td>
+                            <td>40%</td>
+                            <td>Upon acceptance and project kickoff</td>
+                        </tr>
+                        <tr>
+                            <td>Progress Payment</td>
+                            <td>30%</td>
+                            <td>Upon completion of development (pre-UAT)</td>
+                        </tr>
+                        <tr>
+                            <td>Final Payment</td>
+                            <td>30%</td>
+                            <td>Upon Go-Live</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note">Payment terms apply per phase. Monthly costs billed in advance.</p>
+            </div>
+        </div>
+
+        <!-- 14. Support & Maintenance -->
+        <div class="section">
+            <div class="section-header">
+                <h2>14. Ongoing Support & Maintenance</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>14.1 Support Model</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Response Time</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Critical (P1)</td>
+                            <td>2 hours</td>
+                            <td>Site down, payments not processing, major functionality broken</td>
+                        </tr>
+                        <tr>
+                            <td>High (P2)</td>
+                            <td>4 hours</td>
+                            <td>Significant feature not working, integration failure</td>
+                        </tr>
+                        <tr>
+                            <td>Medium (P3)</td>
+                            <td>1 business day</td>
+                            <td>Minor functionality issues, non-critical bugs</td>
+                        </tr>
+                        <tr>
+                            <td>Low (P4)</td>
+                            <td>3 business days</td>
+                            <td>Minor issues, questions, small enhancements</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3>14.2 Support Hours</h3>
+                <ul>
+                    <li><strong>Standard Support:</strong> Monday - Friday, 08:00 - 17:00 SAST</li>
+                    <li><strong>Emergency Support:</strong> 24/7 for Critical (P1) issues</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>14.3 Support Includes</h3>
+                <ul>
+                    <li>Bug fixes and issue resolution</li>
+                    <li>Platform monitoring and alerts</li>
+                    <li>Security patches and updates</li>
+                    <li>Minor content updates (within reasonable limits)</li>
+                    <li>Performance monitoring</li>
+                    <li>Monthly health check reports</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>14.4 Knowledge Transfer</h3>
+                <p>We are committed to ensuring Liquid Lighting can manage day-to-day operations independently:</p>
+                <ul>
+                    <li>Comprehensive admin training sessions</li>
+                    <li>Video tutorials for common tasks</li>
+                    <li>Written documentation and user guides</li>
+                    <li>Technical documentation for integrations</li>
+                    <li>Ongoing access to support team for questions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 15. Terms & Conditions -->
+        <div class="section">
+            <div class="section-header">
+                <h2>15. Terms & Conditions</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>15.1 Validity</h3>
+                <p>This proposal is valid for 60 days from the date of submission. Pricing may be subject to review
+                    after this period.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>15.2 Assumptions</h3>
+                <ul>
+                    <li>Liquid Lighting will provide timely feedback and approvals (within 5 business days)</li>
+                    <li>Content (text, images, product data) will be provided by Liquid Lighting</li>
+                    <li>Access to existing systems will be provided for integration development</li>
+                    <li>Scope changes may impact timeline and costs</li>
+                    <li>Third-party platform costs (Shopify, etc.) are subject to provider pricing changes</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>15.3 Exclusions</h3>
+                <ul>
+                    <li>Product photography and content creation (can be quoted separately)</li>
+                    <li>Advertising spend (media budget)</li>
+                    <li>Payment gateway transaction fees</li>
+                    <li>Third-party software licenses beyond those specified</li>
+                    <li>Hardware or infrastructure at Liquid Lighting premises</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>15.4 Intellectual Property</h3>
+                <ul>
+                    <li>Custom code and designs created for this project will be owned by Liquid Lighting upon full
+                        payment</li>
+                    <li>Third-party platforms (Shopify, QContact, etc.) remain subject to their respective licensing
+                        terms</li>
+                    <li>Reusable frameworks and libraries developed by our team remain our intellectual property</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>15.5 Confidentiality</h3>
+                <p>All information shared during this project will be treated as confidential. We are happy to sign a
+                    mutual NDA if required.</p>
+            </div>
+        </div>
+
+        <!-- 16. Next Steps -->
+        <div class="section">
+            <div class="section-header">
+                <h2>16. Next Steps</h2>
+            </div>
+
+            <ol>
+                <li><strong>Proposal Review:</strong> Review this proposal and consolidate any questions</li>
+                <li><strong>Clarification Meeting:</strong> Schedule a call to discuss any queries or refinements</li>
+                <li><strong>CXG Commercials:</strong> Obtain and incorporate CXG commercial proposal</li>
+                <li><strong>Final Proposal:</strong> Updated proposal incorporating any changes</li>
+                <li><strong>Decision:</strong> Proposal acceptance and contract signing</li>
+                <li><strong>Project Kickoff:</strong> Initiate Phase 1 with kickoff workshop</li>
+            </ol>
+
+            <div class="highlight-box success">
+                <strong>We're Here to Help</strong><br>
+                We are excited about the opportunity to partner with Liquid Lighting on this digital transformation
+                journey. Our team is available to discuss this proposal, answer any questions, and refine our approach
+                to best meet your needs.
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Contact Information</h2>
+            </div>
+
+            <div class="partner-cards">
+                <div class="partner-card">
+                    <h4>Broadbrand</h4>
+                    <p><strong>[Contact Name]</strong></p>
+                    <p>[Title]</p>
+                    <p>Email: [email]</p>
+                    <p>Phone: [phone]</p>
+                </div>
+                <div class="partner-card">
+                    <h4>CXG</h4>
+                    <p><strong>[Contact Name]</strong></p>
+                    <p>[Title]</p>
+                    <p>Email: [email]</p>
+                    <p>Phone: [phone]</p>
+                </div>
+                <div class="partner-card">
+                    <h4>Digitalise</h4>
+                    <p><strong>[Contact Name]</strong></p>
+                    <p>[Title]</p>
+                    <p>Email: [email]</p>
+                    <p>Phone: [phone]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="page-footer">
+            <p><strong>Broadbrand | CXG | Digitalise</strong></p>
+            <p>Proposal Reference: BB-LL-ECOMM-2024-001</p>
+            <p>This document is confidential and intended solely for Liquid Lighting (PTY) Ltd</p>
+            <p>&copy; 2024 Broadbrand. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
